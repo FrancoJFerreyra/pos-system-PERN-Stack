@@ -3,11 +3,17 @@ import express from "express";
 import errorHandler from "@/middlewares/error-handler.js";
 import productRouter from "@/modules/products/product.routes.js";
 import categoryRouter from "@/modules/categories/category.routes.js";
+import cors from "cors";
 
 dotenv.config();
 const port = process.env.PORT;
 const app = express();
 
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
 app.use(express.json());
 
 //routes
