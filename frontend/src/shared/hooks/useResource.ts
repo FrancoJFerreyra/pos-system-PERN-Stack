@@ -13,7 +13,7 @@ export interface ResourceCallbacks<T> {
   onDetailSuccess?: (data: T) => void;
   onCreateSuccess?: (data: T) => void;
   onUpdateSuccess?: (data: T) => void;
-  onDeleteSuccess?: (id: number | string) => void;
+  onRemoveSuccess?: (id: number | string) => void;
   onError?: (error: ApiError) => void;
 }
 
@@ -21,6 +21,11 @@ export interface UseResourceOptions<T> extends ResourceCallbacks<T> {
   params?: Record<string, unknown>;
   scope?: string;
 }
+
+export type UpdateResourcePayload = { id: number | string } & Record<
+  string,
+  unknown
+>;
 
 interface Envelope<T> {
   data: T;
@@ -35,7 +40,7 @@ export const useResource = <T>(
 ) => {
   const queryClient = useQueryClient();
 
-  const params = { populate: "*", ...options?.params };
+  const params = options?.params ?? {};
   const listKey = buildKey(resource, options?.scope);
 
   const invalidateList = () =>
@@ -186,7 +191,7 @@ export const useResource = <T>(
         return id;
       },
       onSuccess: (id) => {
-        options?.onDeleteSuccess?.(id);
+        options?.onRemoveSuccess?.(id);
         invalidateList();
       },
       onError: (error) => options?.onError?.(toApiError(error)),

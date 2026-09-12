@@ -8,9 +8,9 @@ export type UpdateCategoryData = {
 
 export type GetAllCategoryQuery = {
   name?: string;
-  include?: string[];
+  populate?: string[];
 };
 
 export type GetByIdCategoryQuery = {
-  include?: string[];
+  populate?: string[];
 };

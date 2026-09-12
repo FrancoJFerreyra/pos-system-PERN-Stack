@@ -11,24 +11,28 @@ const router = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: "/products",
+    path: "products",
     element: <ProductsPage />,
-    children: [
-      {
-        path: "/:id",
-        element: <ProductItemPage />,
-      },
-    ],
   },
   {
-    path: "/categories",
+    path: "products/create",
+    element: <ProductItemPage />,
+  },
+  {
+    path: "products/update/:id",
+    element: <ProductItemPage />,
+  },
+  {
+    path: "categories",
     element: <CategoriesPage />,
-    children: [
-      {
-        path: "/:id",
-        element: <CategoryItemPage />,
-      },
-    ],
+  },
+  {
+    path: "create",
+    element: <CategoryItemPage />,
+  },
+  {
+    path: "update/:id",
+    element: <CategoryItemPage />,
   },
 ]);
 

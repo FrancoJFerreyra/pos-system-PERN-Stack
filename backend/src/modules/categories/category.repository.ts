@@ -13,24 +13,24 @@ const buildWhereQuery = (
 ): CategoryWhereInput | {} =>
   query?.name
     ? {
-      where: {
-        name: {
-          contains: query.name,
-          mode: "insensitive",
+        where: {
+          name: {
+            contains: query.name,
+            mode: "insensitive",
+          },
         },
-      },
-    }
+      }
     : {};
 
 export const categoryRepository = {
   async findMany(query: GetAllCategoryQuery) {
     const where = buildWhereQuery(query);
-    const include = buildIncludeQuery(query?.include);
+    const include = buildIncludeQuery(query?.populate);
     return prisma.category.findMany({ where, include });
   },
 
   async findById(id: number, query: GetByIdCategoryQuery) {
-    const include = buildIncludeQuery(query?.include);
+    const include = buildIncludeQuery(query?.populate);
     return prisma.category.findUnique({
       where: {
         id,

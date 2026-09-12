@@ -1,0 +1,69 @@
+{
+  "form": {
+    "page": {
+      "title": {
+        "create": "Crear producto",
+        "edit": "Actualizar producto"
+      },
+      "button": {
+        "create": "Crear producto",
+        "edit": "Actualizar producto"
+      }
+    },
+    "fields": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Ingresá el nombre del producto"
+      },
+      "price": {
+        "label": "Precio",
+        "placeholder": "Ingresá el precio del producto"
+      },
+      "sku": {
+        "label": "SKU",
+        "placeholder": "Ingresá o generá el SKU"
+      },
+      "taxRate": {
+        "label": "Tasa de impuesto",
+        "placeholder": "Ingresá la tasa de impuesto"
+      },
+      "description": {
+        "label": "Descripción",
+        "placeholder": "Ingresá la descripción del producto"
+      }
+    },
+    "errors": {
+      "name": {
+        "required": "El nombre es obligatorio",
+        "max": "El nombre debe tener como máximo 120 caracteres"
+      },
+      "sku": {
+        "required": "El SKU es obligatorio",
+        "max": "El SKU debe tener como máximo 64 caracteres"
+      },
+      "description": {
+        "max": "La descripción debe tener como máximo 600 caracteres"
+      },
+      "price": {
+        "invalid": "Ingresá un precio válido",
+        "positive": "El precio debe ser mayor a 0"
+      },
+      "taxRate": {
+        "invalid": "Ingresá una tasa de impuesto válida",
+        "integer": "La tasa de impuesto debe ser un número entero",
+        "min": "La tasa de impuesto no puede ser negativa",
+        "max": "La tasa de impuesto no puede superar el 100%"
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Producto creado correctamente",
+        "update": "Producto actualizado correctamente"
+      }
+    },
+    "button": {
+      "create": "Crear producto",
+      "update": "Actualizar producto"
+    }
+  }
+}

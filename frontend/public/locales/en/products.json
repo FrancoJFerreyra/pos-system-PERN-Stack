@@ -1,0 +1,75 @@
+{
+  "page": {
+    "title": "Products",
+    "button": {
+      "update": "Update product"
+    }
+  },
+  "form": {
+    "page": {
+      "title": {
+        "create": "Create product",
+        "edit": "Update product"
+      },
+      "button": {
+        "create": "Create product",
+        "edit": "Update product"
+      }
+    },
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter product name"
+      },
+      "price": {
+        "label": "Price",
+        "placeholder": "Enter product price"
+      },
+      "sku": {
+        "label": "SKU",
+        "placeholder": "Enter or generate SKU"
+      },
+      "taxRate": {
+        "label": "Tax rate",
+        "placeholder": "Enter tax rate"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Enter product description"
+      }
+    },
+    "errors": {
+      "name": {
+        "required": "Name is required",
+        "max": "Name must be at most 120 characters"
+      },
+      "sku": {
+        "required": "SKU is required",
+        "max": "SKU must be at most 64 characters"
+      },
+      "description": {
+        "max": "Description must be at most 600 characters"
+      },
+      "price": {
+        "invalid": "Enter a valid price",
+        "positive": "Price must be greater than 0"
+      },
+      "taxRate": {
+        "invalid": "Enter a valid tax rate",
+        "integer": "Tax rate must be a whole number",
+        "min": "Tax rate cannot be negative",
+        "max": "Tax rate cannot exceed 100%"
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Product created successfully",
+        "update": "Product updated successfully"
+      }
+    },
+    "button": {
+      "create": "Create product",
+      "update": "Update product"
+    }
+  }
+}

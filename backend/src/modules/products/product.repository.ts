@@ -8,7 +8,6 @@ import {
 } from "./product.types.js";
 import { ProductWhereInput } from "@/generated/prisma/models.js";
 
-
 function buildWhereQuery(query: GetAllProductQuery): ProductWhereInput {
   const where: ProductWhereInput = {};
   if (query.name) {
@@ -39,13 +38,13 @@ function buildWhereQuery(query: GetAllProductQuery): ProductWhereInput {
 
 export const productRepository = {
   async findMany(query: GetAllProductQuery) {
-    const include = buildIncludeQuery(query.include);
+    const include = buildIncludeQuery(query.populate);
     const where = buildWhereQuery(query);
     return prisma.product.findMany({ include, where });
   },
 
   async findById(id: number, query: GetByIdProductQuery) {
-    const include = buildIncludeQuery(query.include);
+    const include = buildIncludeQuery(query.populate);
     return prisma.product.findUnique({
       where: {
         id,
