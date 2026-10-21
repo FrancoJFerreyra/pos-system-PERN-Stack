@@ -7,5 +7,5 @@ export type ApiDefaultParams = {
 };
 
 export type ApiRelationQuery = {
-  include: string[];
+  populate: string[];
 };

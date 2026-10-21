@@ -17,10 +17,10 @@ import { validateQuery } from "@/middlewares/validate-query.js";
 
 const router = Router();
 
-router.get("/:id", validateQuery(getAllProductQuerySchema), getProductById);
-router.get("/", validateQuery(getByIdProductQuerySchema), getAllProducts);
+router.get("/:id", validateQuery(getByIdProductQuerySchema), getProductById);
+router.get("/", validateQuery(getAllProductQuerySchema), getAllProducts);
 router.post("/", validateBody(createProductSchema), createProduct);
-router.patch("/:id", validateBody(updateProductSchema), updateProduct);
+router.put("/:id", validateBody(updateProductSchema), updateProduct);
 router.delete("/:id", deleteProduct);
 
 export default router;

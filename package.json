@@ -9,6 +9,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "@dietrichgebert/ponytail": "5.3.2",
     "husky": "^9.1.7"
   }
 }

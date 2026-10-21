@@ -14,6 +14,7 @@ export function validateQuery<T extends z.ZodType>(
   schema: T,
 ): RequestHandler<Record<string, string>, unknown, unknown, z.output<T>> {
   return (req, _res, next) => {
+    console.log(req.query, "QUEYYY");
     const validationResult = schema.safeParse(req.query);
 
     if (!validationResult.success) {

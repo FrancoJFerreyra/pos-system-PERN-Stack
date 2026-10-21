@@ -38,7 +38,7 @@ Load before adding a domain resource that needs persistence, REST endpoints, and
 3. Backend: schemas → types → repository → service → controller → routes → mount in `src/index.ts`.
 4. Verify: `yarn build` in `backend/`, then exercise the endpoint.
 5. Frontend: types → schema → `use<Feature>` hook → form/components → page → route.
-6. Verify: `yarn lint` and `yarn build` in `frontend/` (the build has a known pre-existing failure in `ProductUpdate.tsx`).
+6. Verify: `yarn lint` and `yarn build` in `frontend/`.
 7. Add the en/es locale keys and remove any keys the change orphaned.
 
 ## Output Contract

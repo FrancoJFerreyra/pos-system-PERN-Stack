@@ -1,4 +1,8 @@
 @layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+
   /* Midnight theme */
   :root {
     /* Colors */

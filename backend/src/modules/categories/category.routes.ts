@@ -20,7 +20,7 @@ const router = Router();
 router.get("/:id", validateQuery(getByIdCategoryQuerySchema), getCategoryById);
 router.get("/", validateQuery(getAllCategoriesQuerySchema), getAllCategories);
 router.post("/", validateBody(createCategorySchema), createCategory);
-router.patch("/:id", validateBody(updateCategorySchema), updateCategory);
+router.put("/:id", validateBody(updateCategorySchema), updateCategory);
 router.delete("/:id", deleteCategory);
 
 export default router;
