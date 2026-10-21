@@ -21,7 +21,6 @@ POS system (PERN stack) built as a **modular monolith**. This is a public portfo
 
 ## Pre-existing failures — do not attribute these to your change
 
-- `frontend` `yarn build` fails: `TS2345` at `src/modules/catalog/products/components/ProductUpdate.tsx:45` (`product` may be `undefined`).
 - `backend` `yarn knip` exits 1: many unused exports inside the generated Prisma client (`src/generated/prisma/*`) plus a config hint.
 - No test runner exists in either app; `backend`'s `yarn test` is a stub that exits 1. There is nothing to run — never claim tests pass.
 
@@ -44,7 +43,7 @@ POS system (PERN stack) built as a **modular monolith**. This is a public portfo
 - Routing is centralised in `src/router.tsx`; register new pages there.
 - i18n: locale JSON lives in `frontend/public/locales/{en,es}/`; the namespaces `common` and `products` are declared in `frontend/i18next.ts` — a new namespace must be added there or its strings never load. No hardcoded user-facing strings.
 - Tailwind v4 is CSS-first: theme tokens are in `src/css/theme.css` (e.g. `bg-ui-primary`, `text-ui-primary-foreground`), `@apply` classes in `src/css/components.css`. There is no JS tailwind config.
-- Money: currency is EUR and the database stores **integer cents**. `toCents()` converts a decimal string to cents for the API; `formatToCurrency()` formats a **decimal** amount.
+- Money: currency is EUR; the API and database store **integer cents**, while the product form works in decimal euros. `toCents(euros)` converts to cents (accepts a number or a decimal string) and `formatToCurrency(cents)` renders minor units via dinero.js.
 
 ## Runtime and env gotchas
 
@@ -55,7 +54,6 @@ POS system (PERN stack) built as a **modular monolith**. This is a public portfo
 
 ## Known rough edges (verified in code — don't copy the pattern)
 
-- Money handling is inconsistent end to end: `ProductCard` calls `formatToCurrency(product.price)` with a cents value (displays 100× too high), and `ProductUpdate.formatProduct` pre-fills the form with cents that `toCents()` converts again (editing multiplies the price by 100).
 - `backend/src/modules/categories/category.repository.ts` builds `{ where: { where: … } }`, so `GET /api/categories?name=…` sends an invalid Prisma filter.
 - The frontend category screens are stubs, and the router exposes category create/update at the root paths `/create` and `/update/:id`.
 - `src/middlewares/validate-query.ts` still contains a leftover `console.log(req.query, "QUEYYY")`.

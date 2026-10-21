@@ -13,15 +13,18 @@ type Props = {
   id: string;
 };
 
-const formatProduct = (product: Product): ProductFormInput => {
+const formatProduct = (product?: Product): ProductFormInput | undefined => {
+  if (!product) return undefined;
+
   return {
-    name: product?.name ?? "",
-    sku: product?.sku,
-    taxRate: product?.taxRate ?? 0,
-    categoryId: product?.categoryId ?? null,
-    description: product?.description ?? "",
-    isActive: product?.isActive,
-    price: product?.price?.toString() ?? "",
+    name: product.name,
+    sku: product.sku,
+    taxRate: product.taxRate ?? 0,
+    categoryId: product.categoryId ?? null,
+    description: product.description ?? "",
+    isActive: product.isActive,
+    // The API stores cents; the form works with the decimal amount.
+    price: product.price / 100,
   };
 };
 

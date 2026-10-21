@@ -18,7 +18,7 @@ const InputNumber = ({
     <NumberInput.Root
       className="w-full"
       formatOptions={formatOptions}
-      value={value ? `${value}` : ""}
+      value={value == null ? "" : String(value)}
       onValueChange={({ valueAsNumber }) => {
         onChange?.({
           target: {

@@ -24,7 +24,19 @@ export const formatToCurrency = (value: number) => {
   });
 };
 
-export const toCents = (value: string): number => {
+/**
+ * Converts a decimal amount (euros) to the integer minor unit (cents) the API stores.
+ * Accepts the numeric value emitted by `InputNumber` or a raw decimal string.
+ */
+export const toCents = (value: string | number): number => {
+  if (typeof value === "number") {
+    if (!Number.isFinite(value)) {
+      throw new Error("Invalid price");
+    }
+
+    return Math.round(value * 100);
+  }
+
   const normalized = value.trim().replace(",", ".");
 
   if (!normalized) {

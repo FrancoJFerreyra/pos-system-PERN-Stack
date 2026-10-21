@@ -54,7 +54,6 @@ const FormInputRate = <
               <InputNumber
                 className={isFullWidth}
                 formatOptions={{
-                  style: "percent",
                   maximumFractionDigits: 1,
                 }}
                 min={0}
@@ -62,7 +61,7 @@ const FormInputRate = <
                 name={name}
                 onChange={onChange}
                 placeholder={placeholder}
-                step={0.1}
+                step={1}
                 value={value}
                 variant={variant}
               />

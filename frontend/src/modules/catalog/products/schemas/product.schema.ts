@@ -13,12 +13,10 @@ const skuSchema = z
   .max(64, { message: "max" });
 const descriptionSchema = z.string().trim().max(600, { message: "max" });
 const priceSchema = z
-  .string()
+  .number({ error: "invalid" })
   .transform(toCents)
-  .pipe(
-    z.number().int({ message: "integer" }).positive({ message: "positive" }),
-  );
-const taxRateSchema = z.coerce
+  .pipe(z.number().positive({ message: "positive" }));
+const taxRateSchema = z
   .number({ error: "invalid" })
   .int({ message: "integer" })
   .min(0, { message: "min" })

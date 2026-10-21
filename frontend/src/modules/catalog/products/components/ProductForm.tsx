@@ -21,7 +21,7 @@ const DEFAULT_VALUES: ProductFormInput = {
   description: "",
   isActive: true,
   name: "",
-  price: "0.00",
+  price: 0,
   sku: "",
   taxRate: 0,
 };
@@ -29,7 +29,7 @@ const DEFAULT_VALUES: ProductFormInput = {
 const parseUpdateValues = (product: ProductFormInput) => ({
   categoryId: product.categoryId ?? null,
   taxRate: product.taxRate ?? 0,
-  price: product.price ?? "0.00",
+  price: product.price ?? 0,
   sku: product.sku ?? "",
   name: product.name ?? "",
   description: product.description ?? "",
