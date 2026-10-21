@@ -82,6 +82,7 @@ const ProductForm = ({ onFormSubmit, product }: Props) => {
             label={t(`${translatePath}.name.label`)}
             name="name"
             placeholder={t(`${translatePath}.name.placeholder`)}
+            required
           />
           <FormInput
             control={control}
@@ -96,6 +97,7 @@ const ProductForm = ({ onFormSubmit, product }: Props) => {
             label={t(`${translatePath}.price.label`)}
             name="price"
             placeholder={t(`${translatePath}.price.placeholder`)}
+            required
           />
         </FormColumn>
         <FormColumn variant="half">
@@ -116,6 +118,7 @@ const ProductForm = ({ onFormSubmit, product }: Props) => {
             label={t(`${translatePath}.sku.label`)}
             name="sku"
             placeholder={t(`${translatePath}.sku.placeholder`)}
+            required
           />
           <FormInputRate
             control={control}
@@ -123,6 +126,7 @@ const ProductForm = ({ onFormSubmit, product }: Props) => {
             label={t(`${translatePath}.taxRate.label`)}
             name="taxRate"
             placeholder={t(`${translatePath}.taxRate.placeholder`)}
+            required
           />
         </FormColumn>
       </FormColumnContainer>
