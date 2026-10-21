@@ -111,6 +111,7 @@ export const useResource = <T>(
         }
       },
       enabled,
+      retry: false,
     });
 
   const useDetail = (
@@ -135,6 +136,7 @@ export const useResource = <T>(
         }
       },
       enabled: enabled && Boolean(id),
+      retry: false,
     });
 
   const useCreate = (): UseMutationResult<

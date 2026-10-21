@@ -1,4 +1,11 @@
 {
+  "page": {
+    "title": "Productos",
+    "button": {
+      "create": "Crear producto",
+      "update": "Actualizar producto"
+    }
+  },
   "form": {
     "page": {
       "title": {
@@ -58,7 +65,14 @@
     "toast": {
       "success": {
         "create": "Producto creado correctamente",
-        "update": "Producto actualizado correctamente"
+        "update": "Producto actualizado correctamente",
+        "remove": "Producto eliminado correctamente"
+      },
+      "error": {
+        "default": "Algo salió mal. Intentá de nuevo.",
+        "badRequest": "Los datos del producto no son válidos.",
+        "notFound": "No se encontró el producto.",
+        "conflict": "Ya existe un producto con ese SKU."
       }
     },
     "button": {

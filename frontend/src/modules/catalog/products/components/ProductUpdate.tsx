@@ -1,4 +1,4 @@
-import { showSuccessToast } from "@/shared/utils/toast.utils";
+import { showErrorToast, showSuccessToast } from "@/shared/utils/toast.utils";
 import { useProducts } from "../hooks/useProducts";
 import type {
   Product,
@@ -8,6 +8,8 @@ import type {
 import ProductForm from "./ProductForm";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import type { ApiError } from "@/shared/types/api";
+import { getProductErrorMessage } from "../utils/productError.utils";
 
 type Props = {
   id: string;
@@ -36,7 +38,12 @@ const ProductUpdate = ({ id }: Props) => {
     navigate(`/products`);
   };
 
-  const { useUpdate, useDetail } = useProducts({ onUpdateSuccess });
+  const { useUpdate, useDetail } = useProducts({
+    onUpdateSuccess,
+    onError: (error: ApiError) => {
+      showErrorToast(getProductErrorMessage(t, error));
+    },
+  });
   const { mutate: updateProduct } = useUpdate(id);
   const { data: product } = useDetail(id);
 

@@ -1,9 +1,11 @@
-import { showSuccessToast } from "@/shared/utils/toast.utils";
+import { showErrorToast, showSuccessToast } from "@/shared/utils/toast.utils";
 import { useProducts } from "../hooks/useProducts";
 import type { ProductForm as ProductFormType } from "../types/product";
 import ProductForm from "./ProductForm";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import type { ApiError } from "@/shared/types/api";
+import { getProductErrorMessage } from "../utils/productError.utils";
 
 const ProductCreate = () => {
   const { t } = useTranslation("products");
@@ -13,7 +15,12 @@ const ProductCreate = () => {
     navigate(`/products`);
   };
 
-  const { useCreate } = useProducts({ onCreateSuccess });
+  const { useCreate } = useProducts({
+    onCreateSuccess,
+    onError: (error: ApiError) => {
+      showErrorToast(getProductErrorMessage(t, error));
+    },
+  });
   const { mutate: createProduct } = useCreate();
 
   const onFormSubmit = (data: ProductFormType) => {

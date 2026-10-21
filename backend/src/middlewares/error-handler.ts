@@ -4,7 +4,8 @@ import { DomainError, serializeError } from "../lib/errors.js";
 import { mapPrismaError } from "../lib/prisma-errors.js";
 import { ErrorRequestHandler } from "express";
 
-const errorHandler: ErrorRequestHandler = (error, _, res) => {
+// Express only recognises error middleware when it declares four parameters.
+const errorHandler: ErrorRequestHandler = (error, _req, res, _next) => {
   error = mapPrismaError(error);
 
   if (error instanceof DomainError) {
