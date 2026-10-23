@@ -1,0 +1,50 @@
+{
+  "page": {
+    "title": "Categories",
+    "button": {
+      "create": "Create category",
+      "update": "Update category"
+    }
+  },
+  "form": {
+    "page": {
+      "title": {
+        "create": "Create category",
+        "edit": "Update category"
+      },
+      "button": {
+        "create": "Create category",
+        "edit": "Update category"
+      }
+    },
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter category name"
+      }
+    },
+    "errors": {
+      "name": {
+        "required": "Name is required",
+        "max": "Name must be at most 100 characters"
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Category created successfully",
+        "update": "Category updated successfully",
+        "remove": "Category removed successfully"
+      },
+      "error": {
+        "default": "Something went wrong. Please try again.",
+        "badRequest": "The category data is invalid.",
+        "notFound": "The category could not be found.",
+        "conflict": "A category with that name already exists."
+      }
+    },
+    "button": {
+      "create": "Create category",
+      "update": "Update category"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "page": {
+    "title": "Categorías",
+    "button": {
+      "create": "Crear categoría",
+      "update": "Actualizar categoría"
+    }
+  },
+  "form": {
+    "page": {
+      "title": {
+        "create": "Crear categoría",
+        "edit": "Actualizar categoría"
+      },
+      "button": {
+        "create": "Crear categoría",
+        "edit": "Actualizar categoría"
+      }
+    },
+    "fields": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Ingresá el nombre de la categoría"
+      }
+    },
+    "errors": {
+      "name": {
+        "required": "El nombre es obligatorio",
+        "max": "El nombre debe tener como máximo 100 caracteres"
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Categoría creada correctamente",
+        "update": "Categoría actualizada correctamente",
+        "remove": "Categoría eliminada correctamente"
+      },
+      "error": {
+        "default": "Algo salió mal. Intentá de nuevo.",
+        "badRequest": "Los datos de la categoría no son válidos.",
+        "notFound": "No se encontró la categoría.",
+        "conflict": "Ya existe una categoría con ese nombre."
+      }
+    },
+    "button": {
+      "create": "Crear categoría",
+      "update": "Actualizar categoría"
+    }
+  }
+}
