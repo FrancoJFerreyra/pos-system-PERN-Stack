@@ -13,7 +13,7 @@ i18n
     lng: localStorage.getItem(DEFAULT_LANGUAGE_KEY) || "en",
     debug: false,
     defaultNS: "common",
-    ns: ["common", "products"],
+    ns: ["common", "products", "categories"],
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",
       requestOptions: {

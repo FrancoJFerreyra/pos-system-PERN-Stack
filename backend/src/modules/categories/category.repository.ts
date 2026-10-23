@@ -53,7 +53,7 @@ export const categoryRepository = {
   },
 
   async delete(id: number) {
-    return prisma.product.delete({
+    return prisma.category.delete({
       where: {
         id,
       },
