@@ -13,11 +13,9 @@ const buildWhereQuery = (
 ): CategoryWhereInput | {} =>
   query?.name
     ? {
-        where: {
-          name: {
-            contains: query.name,
-            mode: "insensitive",
-          },
+        name: {
+          contains: query.name,
+          mode: "insensitive",
         },
       }
     : {};
