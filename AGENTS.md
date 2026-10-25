@@ -54,7 +54,6 @@ POS system (PERN stack) built as a **modular monolith**. This is a public portfo
 
 ## Known rough edges (verified in code — don't copy the pattern)
 
-- `backend/src/modules/categories/category.repository.ts` builds `{ where: { where: … } }`, so `GET /api/categories?name=…` sends an invalid Prisma filter.
 - The frontend category screens are stubs, and the router exposes category create/update at the root paths `/create` and `/update/:id`.
 - `src/middlewares/validate-query.ts` still contains a leftover `console.log(req.query, "QUEYYY")`.
 - The README drifts from the code (backend paths, PATCH vs PUT). Trust the code.

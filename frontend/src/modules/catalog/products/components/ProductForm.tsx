@@ -5,6 +5,8 @@ import type {
 } from "../types/product";
 import { useTranslation } from "react-i18next";
 import { FormInput, FormInputCurrency } from "@/shared/components/form";
+import FormAsyncSelect from "@/shared/components/form/FormAsyncSelect";
+import { loadCategoryOptions } from "../../categories/utils/categoryOptions.utils";
 import { Button } from "@/shared/components/button/Button";
 import { generateSKU } from "../utils/product.utils";
 import FormInputRate from "@/shared/components/form/FormInputRate";
@@ -90,6 +92,17 @@ const ProductForm = ({ onFormSubmit, product }: Props) => {
             label={t(`${translatePath}.description.label`)}
             name="description"
             placeholder={t(`${translatePath}.description.placeholder`)}
+          />
+          <FormAsyncSelect
+            clearLabel={t(`${translatePath}.category.clear`)}
+            control={control}
+            emptyLabel={t(`${translatePath}.category.empty`)}
+            error={getFieldError(t, errors, "categoryId")}
+            label={t(`${translatePath}.category.label`)}
+            loadingLabel={t(`${translatePath}.category.loading`)}
+            loadOptions={loadCategoryOptions}
+            name="categoryId"
+            placeholder={t(`${translatePath}.category.placeholder`)}
           />
           <FormInputCurrency
             control={control}

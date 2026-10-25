@@ -37,6 +37,13 @@
       "description": {
         "label": "Description",
         "placeholder": "Enter product description"
+      },
+      "category": {
+        "label": "Category",
+        "placeholder": "Search categories",
+        "clear": "Clear category",
+        "loading": "Loading categories...",
+        "empty": "No categories found"
       }
     },
     "errors": {
